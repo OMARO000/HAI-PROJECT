@@ -121,7 +121,7 @@ export default function StandardSection() {
   }
 
   return (
-    <section id="standard" ref={sectionRef}>
+    <section id="standard" ref={sectionRef} style={{ scrollMarginTop: "54px" }}>
       <div style={sectionStyle}>
         <div className={`reveal ${visible ? "visible" : ""}`}>
           <p style={eyebrowStyle}>

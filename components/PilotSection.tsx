@@ -80,7 +80,7 @@ export default function PilotSection({ onOrgCountIncrement }: PilotSectionProps)
   };
 
   return (
-    <section id="pilot" ref={ref}>
+    <section id="pilot" ref={ref} style={{ scrollMarginTop: "54px" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "6rem 2.5rem" }}>
 
         <div className={`reveal ${visible ? "visible" : ""}`}>
