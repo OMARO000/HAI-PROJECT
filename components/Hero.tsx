@@ -57,13 +57,13 @@ export default function Hero({ pledgeCount, orgCount, onPledgeClick }: HeroProps
           animation: "fadeUp 0.7s ease forwards 0.4s",
         }}>
           The standard<br />
-          is{" "}
-          <span style={{
+          is<span style={{
             color: "#A8B8C8",
             fontWeight: 300,
-            letterSpacing: "0.11em",
-          }}>/ \</span>{" "}
-          public.<br />
+            letterSpacing: "-0.05em",
+            marginLeft: "0.08em",
+            marginRight: "0.08em",
+          }}>/ \</span>public.<br />
           The record<br />
           is permanent.
           <span style={{
