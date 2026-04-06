@@ -35,7 +35,7 @@ export default function Footer() {
               letterSpacing: "0.1em", color: "#FFFFFF", marginBottom: "0.75rem",
             }}>
               HAI{" "}
-              <span style={{ color: "#A8B8C8", fontWeight: 300, letterSpacing: "0.13em" }}>/ \</span>
+              <span style={{ color: "#A8B8C8", fontWeight: 300, letterSpacing: "-0.05em", margin: "0 0.05em" }}>/ \</span>
               {" "}PROJECT
             </p>
             <p style={{ fontSize: "0.8rem", color: "#7A96B0", lineHeight: 1.6 }}>
