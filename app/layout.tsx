@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Barlow, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/Nav";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -43,7 +44,10 @@ export default function RootLayout({
       <body
         className={`${barlowCondensed.variable} ${barlow.variable} ${ibmPlexMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <Nav />
+        <main className="flex-1">
+          {children}
+        </main>
       </body>
     </html>
   );
