@@ -45,8 +45,8 @@ export default function Nav() {
           <span style={{
             fontFamily: "var(--font-barlow-condensed)",
             fontWeight: 300, fontSize: "1rem",
-            letterSpacing: "0.08em", textTransform: "uppercase",
-            color: "#A8B8C8", margin: "0",
+            letterSpacing: "-0.05em", textTransform: "uppercase",
+            color: "#A8B8C8", margin: "0 0.05em",
           }}>
             / \
           </span>
