@@ -4,6 +4,7 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import StandardSection from "@/components/StandardSection";
 import RubricSection from "@/components/RubricSection";
+import PilotSection from "@/components/PilotSection";
 import Rule from "@/components/Rule";
 
 export default function Home() {
@@ -22,6 +23,8 @@ export default function Home() {
       <StandardSection />
       <Rule />
       <RubricSection />
+      <Rule />
+      <PilotSection onOrgCountIncrement={() => setOrgCount(c => c + 1)} />
     </main>
   );
 }
