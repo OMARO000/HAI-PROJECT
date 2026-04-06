@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hero from "@/components/Hero";
 import StandardSection from "@/components/StandardSection";
 import RubricSection from "@/components/RubricSection";
@@ -13,6 +13,10 @@ export default function Home() {
   const [pledgeCount, setPledgeCount] = useState(2847);
   const [orgCount, setOrgCount] = useState(114);
   const [pledgeOpen, setPledgeOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
