@@ -45,8 +45,8 @@ export default function Nav() {
           <span style={{
             fontFamily: "var(--font-barlow-condensed)",
             fontWeight: 300, fontSize: "1rem",
-            letterSpacing: "0.13em", textTransform: "uppercase",
-            color: "#A8B8C8",
+            letterSpacing: "0.08em", textTransform: "uppercase",
+            color: "#A8B8C8", margin: "0",
           }}>
             / \
           </span>
@@ -60,11 +60,11 @@ export default function Nav() {
           </span>
           <span style={{
             display: "inline-block",
-            width: "3px", height: "0.82em",
+            width: "3px", height: "1em",
             background: "#B85C38",
-            marginLeft: "4px",
+            marginLeft: "5px",
             verticalAlign: "middle",
-            position: "relative", top: "-1px",
+            position: "relative" as const, top: "-1px",
             animation: "blink 1.1s step-end infinite",
           }} />
         </Link>
