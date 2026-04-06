@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Hero from "@/components/Hero";
 import StandardSection from "@/components/StandardSection";
+import RubricSection from "@/components/RubricSection";
+import Rule from "@/components/Rule";
 
 export default function Home() {
   const [pledgeCount, setPledgeCount] = useState(2847);
@@ -16,7 +18,10 @@ export default function Home() {
         orgCount={orgCount}
         onPledgeClick={() => setPledgeOpen(true)}
       />
+      <Rule />
       <StandardSection />
+      <Rule />
+      <RubricSection />
     </main>
   );
 }
