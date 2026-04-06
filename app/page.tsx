@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Hero from "@/components/Hero";
+import StandardSection from "@/components/StandardSection";
 
 export default function Home() {
   const [pledgeCount, setPledgeCount] = useState(2847);
@@ -15,6 +16,7 @@ export default function Home() {
         orgCount={orgCount}
         onPledgeClick={() => setPledgeOpen(true)}
       />
+      <StandardSection />
     </main>
   );
 }
