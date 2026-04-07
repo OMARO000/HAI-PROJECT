@@ -5,10 +5,11 @@ import { useEffect, useRef } from "react";
 interface HeroProps {
   pledgeCount: number;
   orgCount: number;
+  countryCount: number;
   onPledgeClick: () => void;
 }
 
-export default function Hero({ pledgeCount, orgCount, onPledgeClick }: HeroProps) {
+export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClick }: HeroProps) {
   return (
     <section style={{
       minHeight: "100vh",
@@ -200,7 +201,7 @@ export default function Hero({ pledgeCount, orgCount, onPledgeClick }: HeroProps
               color: "#FFFFFF", lineHeight: 1,
               marginBottom: "0.2rem",
             }}>
-              47+
+              {countryCount > 0 ? `${countryCount}+` : "—"}
             </div>
             <div style={{
               fontFamily: "var(--font-ibm-plex-mono)",

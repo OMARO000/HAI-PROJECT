@@ -32,42 +32,68 @@ export default function Nav() {
         }}
         aria-label="Main navigation"
       >
-        {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-          <span style={{
-            fontFamily: "var(--font-barlow-condensed)",
-            fontWeight: 700, fontSize: "1rem",
-            letterSpacing: "0.1em", textTransform: "uppercase",
-            color: "#FFFFFF",
+        {/* Left side: Logo + OMARO badge */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          {/* Logo */}
+          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            <span style={{
+              fontFamily: "var(--font-barlow-condensed)",
+              fontWeight: 700, fontSize: "1.4rem",
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              color: "#FFFFFF",
+            }}>
+              HAI&nbsp;
+            </span>
+            <span style={{
+              fontFamily: "var(--font-barlow-condensed)",
+              fontWeight: 300, fontSize: "1.4rem",
+              letterSpacing: "-0.05em", textTransform: "uppercase",
+              color: "#A8B8C8", margin: "0 0.05em",
+            }}>
+              / \
+            </span>
+            <span style={{
+              fontFamily: "var(--font-barlow-condensed)",
+              fontWeight: 700, fontSize: "1.4rem",
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              color: "#FFFFFF",
+            }}>
+              &nbsp;PROJECT
+            </span>
+            <span style={{
+              display: "inline-block",
+              width: "3px", height: "1em",
+              background: "#B85C38",
+              marginLeft: "5px",
+              verticalAlign: "middle",
+              position: "relative" as const, top: "-1px",
+              animation: "blink 1.1s step-end infinite",
+            }} />
+          </Link>
+
+          {/* OMARO badge */}
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(184,92,56,0.18)",
+            border: "1px solid rgba(184,92,56,0.45)",
+            padding: "0.2rem 0.55rem",
+            lineHeight: 1.2,
           }}>
-            HAI&nbsp;
-          </span>
-          <span style={{
-            fontFamily: "var(--font-barlow-condensed)",
-            fontWeight: 300, fontSize: "1rem",
-            letterSpacing: "-0.05em", textTransform: "uppercase",
-            color: "#A8B8C8", margin: "0 0.05em",
-          }}>
-            / \
-          </span>
-          <span style={{
-            fontFamily: "var(--font-barlow-condensed)",
-            fontWeight: 700, fontSize: "1rem",
-            letterSpacing: "0.1em", textTransform: "uppercase",
-            color: "#FFFFFF",
-          }}>
-            &nbsp;PROJECT
-          </span>
-          <span style={{
-            display: "inline-block",
-            width: "3px", height: "1em",
-            background: "#B85C38",
-            marginLeft: "5px",
-            verticalAlign: "middle",
-            position: "relative" as const, top: "-1px",
-            animation: "blink 1.1s step-end infinite",
-          }} />
-        </Link>
+            <span style={{
+              fontFamily: "var(--font-ibm-plex-mono)",
+              fontSize: "0.52rem",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "#B85C38",
+              whiteSpace: "nowrap",
+            }}>
+              An OMARO Company
+            </span>
+          </div>
+        </div>
 
         {/* Desktop links */}
         <ul style={{

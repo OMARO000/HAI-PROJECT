@@ -18,6 +18,7 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
   const [type, setType] = useState<"individual" | "organization">("individual");
   const [form, setForm] = useState({ name: "", org: "", email: "", country: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   if (!open) return null;
@@ -27,7 +28,7 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
     setError("");
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     if (!form.name || !form.email) {
       setError("Please fill in your name and email.");
       return;
@@ -39,8 +40,37 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
         return;
       }
     }
-    setSubmitted(true);
-    onPledgeCountIncrement();
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/pledge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          org: form.org || null,
+          country: form.country || null,
+          type,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong.");
+        return;
+      }
+
+      setSubmitted(true);
+      onPledgeCountIncrement();
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   const inputStyle: React.CSSProperties = {
@@ -52,6 +82,7 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
     fontFamily: "var(--font-barlow)",
     fontSize: "0.85rem",
     outline: "none",
+    boxSizing: "border-box",
   };
 
   const labelStyle: React.CSSProperties = {
@@ -102,7 +133,6 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
               Add your name to the registry of people who believe AI accountability must be structural — not aspirational.
             </p>
 
-            {/* Type toggle */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "1.5rem" }}>
               {(["individual", "organization"] as const).map((t) => (
                 <div
@@ -129,7 +159,6 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
               ))}
             </div>
 
-            {/* Fields */}
             <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", marginBottom: "0" }}>
               <div>
                 <label style={labelStyle} htmlFor="name">Your name</label>
@@ -152,14 +181,13 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
                   onBlur={e => (e.currentTarget.style.borderColor = "rgba(168,184,200,0.18)")} />
               </div>
               <div>
-                <label style={labelStyle} htmlFor="country">Country</label>
+                <label style={labelStyle} htmlFor="country">Country <span style={{ color: "#4A6070" }}>(optional — auto-detected if blank)</span></label>
                 <input id="country" type="text" placeholder="Country" value={form.country} onChange={handleChange} style={inputStyle}
                   onFocus={e => (e.currentTarget.style.borderColor = "rgba(184,92,56,0.3)")}
                   onBlur={e => (e.currentTarget.style.borderColor = "rgba(168,184,200,0.18)")} />
               </div>
             </div>
 
-            {/* Pledge quote */}
             <div style={{
               borderLeft: "2px solid rgba(184,92,56,0.3)",
               padding: "0.85rem 1.1rem",
@@ -181,17 +209,20 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
 
             <button
               onClick={handleSubmit}
+              disabled={loading}
               style={{
                 width: "100%",
                 fontFamily: "var(--font-ibm-plex-mono)",
                 fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase",
                 padding: "0.8rem 1.75rem",
-                background: "#B85C38", color: "#FFFFFF", border: "none", cursor: "pointer",
+                background: loading ? "#7A4030" : "#B85C38",
+                color: "#FFFFFF", border: "none",
+                cursor: loading ? "not-allowed" : "pointer",
                 transition: "background 0.2s",
               }}
-              onMouseEnter={e => (e.currentTarget.style.background = "#D4724E")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#B85C38")}
-            >Sign the pledge →</button>
+              onMouseEnter={e => { if (!loading) e.currentTarget.style.background = "#D4724E"; }}
+              onMouseLeave={e => { if (!loading) e.currentTarget.style.background = "#B85C38"; }}
+            >{loading ? "Submitting..." : "Sign the pledge →"}</button>
           </>
         ) : (
           <div style={{ textAlign: "center", padding: "2rem 0" }}>
@@ -200,14 +231,14 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
               fontSize: "1.2rem", fontWeight: 700,
               color: "#B85C38", marginBottom: "1rem",
               letterSpacing: "0.2em", textTransform: "uppercase",
-            }}>[ Pledge Signed ]</p>
+            }}>[ Check your inbox ]</p>
             <h3 style={{
               fontFamily: "var(--font-barlow-condensed)",
               fontSize: "1.8rem", fontWeight: 700, textTransform: "uppercase",
               color: "#FFFFFF", marginBottom: "0.5rem",
-            }}>You&apos;re on the record.</h3>
-            <p style={{ fontSize: "0.83rem", color: "#7A96B0", marginBottom: "1.5rem" }}>
-              Your name has been added to the HAI registry. Thank you for standing with the movement.
+            }}>One step left.</h3>
+            <p style={{ fontSize: "0.83rem", color: "#7A96B0", marginBottom: "1.5rem", lineHeight: 1.6 }}>
+              We sent a confirmation link to <strong style={{ color: "#DCE4EC" }}>{form.email}</strong>. Click it to lock in your signature on the registry.
             </p>
             <button
               onClick={onClose}
