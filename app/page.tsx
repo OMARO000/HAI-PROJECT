@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import PledgeModal from "@/components/PledgeModal";
 import Rule from "@/components/Rule";
 import AccountBlock from "@/components/AccountBlock";
+import NinePillarsSection from "@/components/NinePillarsSection";
 
 export default function Home() {
   const [pledgeCount, setPledgeCount] = useState(0);
@@ -38,6 +39,8 @@ export default function Home() {
         />
         <Rule />
         <AccountBlock />
+        <Rule />
+        <NinePillarsSection />
         <Rule />
         <StandardSection />
         <Rule />
