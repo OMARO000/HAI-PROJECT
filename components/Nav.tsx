@@ -17,7 +17,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header style={{
+    <header suppressHydrationWarning style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
       background: "rgba(11,25,41,0.94)",
       backdropFilter: "blur(12px)",
@@ -25,6 +25,7 @@ export default function Nav() {
       height: "128px",
     }}>
       <nav
+        suppressHydrationWarning
         style={{
           display: "flex",
           flexDirection: "row",
@@ -38,9 +39,9 @@ export default function Nav() {
         aria-label="Main navigation"
       >
         {/* Child 1 — Logo + badge (LEFT) */}
-        <div style={{ display: "flex", alignItems: "center", paddingLeft: "24px", flexShrink: 0, gap: "0.75rem" }}>
-          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-            <span style={{
+        <div suppressHydrationWarning style={{ display: "flex", alignItems: "center", paddingLeft: "24px", flexShrink: 0, gap: "0.75rem" }}>
+          <Link href="/" suppressHydrationWarning style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            <span suppressHydrationWarning style={{
               fontFamily: "var(--font-barlow-condensed)",
               fontWeight: 700, fontSize: "1.75rem",
               letterSpacing: "0.1em", textTransform: "uppercase",
@@ -48,7 +49,7 @@ export default function Nav() {
             }}>
               HAI&nbsp;
             </span>
-            <span style={{
+            <span suppressHydrationWarning style={{
               fontFamily: "var(--font-barlow-condensed)",
               fontWeight: 300, fontSize: "1.75rem",
               letterSpacing: "-0.05em", textTransform: "uppercase",
@@ -56,7 +57,7 @@ export default function Nav() {
             }}>
               / \
             </span>
-            <span style={{
+            <span suppressHydrationWarning style={{
               fontFamily: "var(--font-barlow-condensed)",
               fontWeight: 700, fontSize: "1.75rem",
               letterSpacing: "0.1em", textTransform: "uppercase",
@@ -64,7 +65,7 @@ export default function Nav() {
             }}>
               &nbsp;PROJECT
             </span>
-            <span style={{
+            <span suppressHydrationWarning style={{
               display: "inline-block",
               width: "3px", height: "1.75rem",
               background: "#B85C38",
@@ -80,9 +81,10 @@ export default function Nav() {
             href="https://omaro-site.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
+            suppressHydrationWarning
             style={{ textDecoration: "none" }}
           >
-            <div style={{
+            <div suppressHydrationWarning style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -95,7 +97,7 @@ export default function Nav() {
               onMouseEnter={e => ((e.currentTarget as HTMLDivElement).style.background = "rgba(184,92,56,0.28)")}
               onMouseLeave={e => ((e.currentTarget as HTMLDivElement).style.background = "rgba(184,92,56,0.18)")}
             >
-              <span style={{
+              <span suppressHydrationWarning style={{
                 fontFamily: "var(--font-ibm-plex-mono)",
                 fontSize: "13px",
                 letterSpacing: "0.08em",
@@ -128,6 +130,7 @@ export default function Nav() {
           {navLinks.map(({ href, label, external, noUppercase }) => (
             <li key={href}>
               <a
+                suppressHydrationWarning
                 href={href}
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 style={{
@@ -147,7 +150,7 @@ export default function Nav() {
         </ul>
 
         {/* Child 3 — Account buttons (RIGHT) */}
-        <div style={{
+        <div suppressHydrationWarning style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "stretch",
@@ -159,6 +162,7 @@ export default function Nav() {
           width: "160px",
         }}>
           <a
+            suppressHydrationWarning
             href="#pilot"
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
@@ -174,6 +178,7 @@ export default function Nav() {
             onMouseLeave={e => { e.currentTarget.style.background = "#B85C38"; e.currentTarget.style.borderColor = "#B85C38"; }}
           >Apply for Pilot</a>
           <a
+            suppressHydrationWarning
             href="/account"
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
@@ -189,6 +194,7 @@ export default function Nav() {
             onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
           >Login</a>
           <a
+            suppressHydrationWarning
             href="/account"
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
@@ -207,6 +213,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
+          suppressHydrationWarning
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -223,7 +230,7 @@ export default function Nav() {
           }}
         >
           {[0, 1, 2].map((i) => (
-            <span key={i} style={{
+            <span suppressHydrationWarning key={i} style={{
               display: "block", width: "20px", height: "1px",
               background: "#DCE4EC", transition: "all 0.2s",
               transform: menuOpen
@@ -240,10 +247,11 @@ export default function Nav() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
+          suppressHydrationWarning
           id="mobile-menu"
           style={{ borderTop: "1px solid rgba(168,184,200,0.18)", background: "rgba(11,25,41,0.98)" }}
         >
-          <ul style={{
+          <ul suppressHydrationWarning style={{
             maxWidth: "1100px", margin: "0 auto",
             padding: "1.25rem 2.5rem",
             display: "flex", flexDirection: "column", gap: "1.25rem",
@@ -252,6 +260,7 @@ export default function Nav() {
             {navLinks.map(({ href, label, external, noUppercase }) => (
               <li key={href}>
                 <a
+                  suppressHydrationWarning
                   href={href}
                   {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   onClick={() => setMenuOpen(false)}
@@ -267,6 +276,7 @@ export default function Nav() {
             ))}
             <li>
               <a
+                suppressHydrationWarning
                 href="#pilot"
                 onClick={() => setMenuOpen(false)}
                 style={{

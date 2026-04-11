@@ -11,7 +11,7 @@ interface HeroProps {
 
 export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClick }: HeroProps) {
   return (
-    <section style={{
+    <section suppressHydrationWarning style={{
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
