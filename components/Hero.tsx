@@ -81,7 +81,7 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
             animation: "fadeUp 0.7s ease forwards 0.5s",
           }}
         >
-          <div style={{ flex: 1, height: "2px", backgroundColor: "#B85C38" }} />
+          <div suppressHydrationWarning style={{ flex: 1, height: "2px", backgroundColor: "#B85C38" }} />
           <span
             suppressHydrationWarning
             style={{
