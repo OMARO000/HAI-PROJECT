@@ -68,24 +68,30 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
         </h1>
 
         {/* Floor divider */}
-        <div style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          width: "420px",
-          margin: "16px auto",
-          gap: "8px",
-          opacity: 0,
-          animation: "fadeUp 0.7s ease forwards 0.5s",
-        }}>
+        <div
+          suppressHydrationWarning
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            width: "420px",
+            margin: "16px auto",
+            gap: "8px",
+            opacity: 0,
+            animation: "fadeUp 0.7s ease forwards 0.5s",
+          }}
+        >
           <div style={{ flex: 1, height: "2px", backgroundColor: "#B85C38" }} />
-          <span style={{
-            fontFamily: "var(--font-caveat)",
-            fontSize: "18px",
-            color: "#B85C38",
-            whiteSpace: "nowrap",
-            lineHeight: 1,
-          }}>← floor</span>
+          <span
+            suppressHydrationWarning
+            style={{
+              fontFamily: "var(--font-caveat)",
+              fontSize: "18px",
+              color: "#B85C38",
+              whiteSpace: "nowrap",
+              lineHeight: 1,
+            }}
+          >← floor</span>
         </div>
 
         {/* Hero title — second line */}
