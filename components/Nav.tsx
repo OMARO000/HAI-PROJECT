@@ -39,7 +39,7 @@ export default function Nav() {
         aria-label="Main navigation"
       >
         {/* Child 1 — Logo + badge (LEFT) */}
-        <div suppressHydrationWarning style={{ display: "flex", alignItems: "center", paddingLeft: "24px", flexShrink: 0, gap: "0.75rem" }}>
+        <div suppressHydrationWarning style={{ display: "flex", alignItems: "center", paddingLeft: "24px", flexShrink: 0, gap: "0.75rem", width: "200px" }}>
           <Link href="/" suppressHydrationWarning style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
             <span suppressHydrationWarning style={{
               fontFamily: "var(--font-barlow-condensed)",
@@ -159,7 +159,7 @@ export default function Nav() {
           paddingRight: "24px",
           paddingTop: "8px",
           flexShrink: 0,
-          width: "160px",
+          width: "200px",
         }}>
           <a
             suppressHydrationWarning
