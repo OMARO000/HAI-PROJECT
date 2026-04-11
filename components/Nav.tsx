@@ -21,20 +21,23 @@ export default function Nav() {
       background: "rgba(11,25,41,0.94)",
       backdropFilter: "blur(12px)",
       borderBottom: "1px solid rgba(168,184,200,0.18)",
-      height: "54px",
+      height: "96px",
     }}>
       <nav
         style={{
-          maxWidth: "1100px", margin: "0 auto",
-          padding: "0 2.5rem", height: "54px",
-          display: "flex", alignItems: "center",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
           justifyContent: "space-between",
+          width: "100%",
+          height: "96px",
+          padding: 0,
+          boxSizing: "border-box",
         }}
         aria-label="Main navigation"
       >
-        {/* Left side: Logo + OMARO badge */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          {/* Logo */}
+        {/* Child 1 — Logo + badge (LEFT) */}
+        <div style={{ display: "flex", alignItems: "center", paddingLeft: "24px", flexShrink: 0, gap: "0.75rem" }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
             <span style={{
               fontFamily: "var(--font-barlow-condensed)",
@@ -74,7 +77,6 @@ export default function Nav() {
           {/* OMARO badge */}
           <div style={{
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             background: "rgba(184,92,56,0.18)",
@@ -95,10 +97,18 @@ export default function Nav() {
           </div>
         </div>
 
-        {/* Desktop links */}
+        {/* Child 2 — Nav links (CENTER) */}
         <ul style={{
-          display: "flex", gap: "1.75rem",
-          listStyle: "none", alignItems: "center",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          flex: 1,
+          gap: "28px",
+          flexWrap: "nowrap",
+          listStyle: "none",
+          margin: 0,
+          padding: 0,
         }} className="hidden md:flex">
           {navLinks.map(({ href, label, external }) => (
             <li key={href}>
@@ -109,7 +119,7 @@ export default function Nav() {
                   rel="noopener noreferrer"
                   style={{
                     fontFamily: "var(--font-ibm-plex-mono)",
-                    fontSize: "0.67rem", letterSpacing: "0.1em",
+                    fontSize: "15px", letterSpacing: "0.06em",
                     textTransform: "uppercase", textDecoration: "none",
                     color: "#7A96B0", transition: "color 0.2s",
                   }}
@@ -123,7 +133,7 @@ export default function Nav() {
                   href={href}
                   style={{
                     fontFamily: "var(--font-ibm-plex-mono)",
-                    fontSize: "0.67rem", letterSpacing: "0.1em",
+                    fontSize: "15px", letterSpacing: "0.06em",
                     textTransform: "uppercase", textDecoration: "none",
                     color: "#7A96B0", transition: "color 0.2s",
                   }}
@@ -137,57 +147,47 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* Right side: CTA + Account buttons */}
-        <div className="hidden md:flex" style={{ alignItems: "center", gap: "0.75rem", paddingRight: "0" }}>
+        {/* Child 3 — Account buttons (RIGHT) */}
+        <div className="hidden md:flex" style={{
+          flexDirection: "column",
+          alignItems: "stretch",
+          justifyContent: "center",
+          gap: "4px",
+          paddingRight: "24px",
+          paddingTop: "8px",
+          flexShrink: 0,
+          width: "140px",
+        }}>
           <a
-            href="#pilot"
+            href="/account"
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
-              fontSize: "0.67rem", letterSpacing: "0.1em",
+              fontSize: "13px", letterSpacing: "0.08em",
               textTransform: "uppercase", textDecoration: "none",
-              padding: "0.42rem 1rem",
-              background: "#B85C38", color: "#FFFFFF",
+              padding: "5px 0", width: "100%", textAlign: "center",
+              background: "transparent", color: "#B85C38",
+              border: "1px solid #B85C38", borderRadius: "2px",
               transition: "background 0.2s",
+              display: "block", boxSizing: "border-box",
             }}
-            onMouseEnter={e => (e.currentTarget.style.background = "#D4724E")}
-            onMouseLeave={e => (e.currentTarget.style.background = "#B85C38")}
-          >
-            Apply for Pilot
-          </a>
-
-          {/* Stacked account buttons */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "4px", paddingRight: "24px" }}>
-            <a
-              href="/account"
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontSize: "0.625rem", letterSpacing: "0.08em",
-                textTransform: "uppercase", textDecoration: "none",
-                padding: "5px 0", minWidth: "120px", textAlign: "center",
-                background: "transparent", color: "#B85C38",
-                border: "1px solid #B85C38", borderRadius: "2px",
-                transition: "background 0.2s, color 0.2s",
-                display: "block",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = "rgba(184,92,56,0.12)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
-            >Login</a>
-            <a
-              href="/account"
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontSize: "0.625rem", letterSpacing: "0.08em",
-                textTransform: "uppercase", textDecoration: "none",
-                padding: "5px 0", minWidth: "120px", textAlign: "center",
-                background: "#B85C38", color: "#FFFFFF",
-                border: "1px solid #B85C38", borderRadius: "2px",
-                transition: "background 0.2s",
-                display: "block",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#D4724E"; e.currentTarget.style.borderColor = "#D4724E"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "#B85C38"; e.currentTarget.style.borderColor = "#B85C38"; }}
-            >Create Account</a>
-          </div>
+            onMouseEnter={e => { e.currentTarget.style.background = "rgba(184,92,56,0.12)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+          >Login</a>
+          <a
+            href="/account"
+            style={{
+              fontFamily: "var(--font-ibm-plex-mono)",
+              fontSize: "13px", letterSpacing: "0.08em",
+              textTransform: "uppercase", textDecoration: "none",
+              padding: "5px 0", width: "100%", textAlign: "center",
+              background: "#B85C38", color: "#FFFFFF",
+              border: "1px solid #B85C38", borderRadius: "2px",
+              transition: "background 0.2s",
+              display: "block", boxSizing: "border-box",
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = "#D4724E"; e.currentTarget.style.borderColor = "#D4724E"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "#B85C38"; e.currentTarget.style.borderColor = "#B85C38"; }}
+          >Create Account</a>
         </div>
 
         {/* Mobile hamburger */}
@@ -197,7 +197,7 @@ export default function Nav() {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
-          style={{ background: "none", border: "none", cursor: "pointer" }}
+          style={{ background: "none", border: "none", cursor: "pointer", marginRight: "16px" }}
         >
           {[0, 1, 2].map((i) => (
             <span key={i} style={{
