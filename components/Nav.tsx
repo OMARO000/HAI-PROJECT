@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
+  { href: "https://omen-app-cyan.vercel.app", label: "OMEN", external: true },
+  { href: "https://igitit-app.vercel.app", label: "iGITit", external: true, noUppercase: true },
   { href: "#standard", label: "Standard" },
   { href: "#rubric", label: "Scoring" },
   { href: "#pilot", label: "Pilot" },
-  { href: "https://omaro.xyz", label: "OMARO", external: true },
 ];
 
 export default function Nav() {
@@ -110,39 +111,23 @@ export default function Nav() {
           margin: 0,
           padding: 0,
         }} className="hidden md:flex">
-          {navLinks.map(({ href, label, external }) => (
+          {navLinks.map(({ href, label, external, noUppercase }) => (
             <li key={href}>
-              {external ? (
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    fontFamily: "var(--font-ibm-plex-mono)",
-                    fontSize: "15px", letterSpacing: "0.06em",
-                    textTransform: "uppercase", textDecoration: "none",
-                    color: "#7A96B0", transition: "color 0.2s",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "#DCE4EC")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "#7A96B0")}
-                >
-                  {label}
-                </a>
-              ) : (
-                <a
-                  href={href}
-                  style={{
-                    fontFamily: "var(--font-ibm-plex-mono)",
-                    fontSize: "15px", letterSpacing: "0.06em",
-                    textTransform: "uppercase", textDecoration: "none",
-                    color: "#7A96B0", transition: "color 0.2s",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "#DCE4EC")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "#7A96B0")}
-                >
-                  {label}
-                </a>
-              )}
+              <a
+                href={href}
+                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                style={{
+                  fontFamily: "var(--font-ibm-plex-mono)",
+                  fontSize: "15px", letterSpacing: "0.06em",
+                  textTransform: noUppercase ? "none" : "uppercase",
+                  textDecoration: "none",
+                  color: "#7A96B0", transition: "color 0.2s",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#DCE4EC")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#7A96B0")}
+              >
+                {label}
+              </a>
             </li>
           ))}
         </ul>
@@ -226,31 +211,20 @@ export default function Nav() {
             display: "flex", flexDirection: "column", gap: "1.25rem",
             listStyle: "none",
           }}>
-            {navLinks.map(({ href, label, external }) => (
+            {navLinks.map(({ href, label, external, noUppercase }) => (
               <li key={href}>
-                {external ? (
-                  <a
-                    href={href} target="_blank" rel="noopener noreferrer"
-                    onClick={() => setMenuOpen(false)}
-                    style={{
-                      fontFamily: "var(--font-ibm-plex-mono)",
-                      fontSize: "0.85rem", letterSpacing: "0.1em",
-                      textTransform: "uppercase", textDecoration: "none",
-                      color: "#7A96B0",
-                    }}
-                  >{label}</a>
-                ) : (
-                  <a
-                    href={href}
-                    onClick={() => setMenuOpen(false)}
-                    style={{
-                      fontFamily: "var(--font-ibm-plex-mono)",
-                      fontSize: "0.85rem", letterSpacing: "0.1em",
-                      textTransform: "uppercase", textDecoration: "none",
-                      color: "#7A96B0",
-                    }}
-                  >{label}</a>
-                )}
+                <a
+                  href={href}
+                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    fontFamily: "var(--font-ibm-plex-mono)",
+                    fontSize: "0.85rem", letterSpacing: "0.1em",
+                    textTransform: noUppercase ? "none" : "uppercase",
+                    textDecoration: "none",
+                    color: "#7A96B0",
+                  }}
+                >{label}</a>
               </li>
             ))}
             <li>
