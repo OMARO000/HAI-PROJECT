@@ -2,6 +2,14 @@ export type CertificationTier = "certified" | "verified" | "declared" | "none";
 
 export type PillarResult = "pass" | "partial" | "fail" | "pending";
 
+export type AuditResult = "pass" | "pending" | "suspended";
+
+export interface AuditEntry {
+  date: string;
+  type: string;
+  result: AuditResult;
+}
+
 export interface Company {
   slug: string;
   name: string;
@@ -12,6 +20,7 @@ export interface Company {
   website?: string;
   description?: string;
   pillars: Record<number, PillarResult>;
+  auditHistory: AuditEntry[];
 }
 
 export const companies: Company[] = [
@@ -36,6 +45,9 @@ export const companies: Company[] = [
       8: "pass",
       9: "pass",
     },
+    auditHistory: [
+      { date: "April 2026", type: "Initial Certification", result: "pass" },
+    ],
   },
 ];
 
