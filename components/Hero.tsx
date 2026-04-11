@@ -44,7 +44,7 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
           animation: "fadeUp 0.7s ease forwards 0.3s",
         }} />
 
-        {/* Hero title */}
+        {/* Hero title — first line */}
         <h1 style={{
           fontFamily: "var(--font-barlow-condensed)",
           fontSize: "clamp(3.8rem, 8.5vw, 8.5rem)",
@@ -53,7 +53,7 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
           lineHeight: 0.95,
           letterSpacing: "-0.01em",
           color: "#FFFFFF",
-          marginBottom: "2.5rem",
+          marginBottom: "1.25rem",
           opacity: 0,
           animation: "fadeUp 0.7s ease forwards 0.4s",
         }}>
@@ -64,7 +64,40 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
             letterSpacing: "-0.05em",
             marginLeft: "0.08em",
             marginRight: "0.08em",
-          }}>/ \</span>floor.<br />
+          }}>/ \</span>floor.
+        </h1>
+
+        {/* Floor divider */}
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.75rem",
+          marginBottom: "1.25rem",
+          opacity: 0,
+          animation: "fadeUp 0.7s ease forwards 0.5s",
+        }}>
+          <div style={{ width: "280px", height: "2px", background: "#B85C38", flexShrink: 0 }} />
+          <span style={{
+            fontFamily: "var(--font-caveat)",
+            fontSize: "18px",
+            color: "#B85C38",
+            lineHeight: 1,
+          }}>↓ floor</span>
+        </div>
+
+        {/* Hero title — second line */}
+        <div style={{
+          fontFamily: "var(--font-barlow-condensed)",
+          fontSize: "clamp(3.8rem, 8.5vw, 8.5rem)",
+          fontWeight: 700,
+          textTransform: "uppercase",
+          lineHeight: 0.95,
+          letterSpacing: "-0.01em",
+          color: "#FFFFFF",
+          marginBottom: "2.5rem",
+          opacity: 0,
+          animation: "fadeUp 0.7s ease forwards 0.55s",
+        }}>
           Where do you<br />
           stand?
           <span style={{
@@ -78,7 +111,7 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
             top: "-3px",
             animation: "blink 1.1s step-end infinite",
           }} />
-        </h1>
+        </div>
 
         {/* Subheading */}
         <p style={{

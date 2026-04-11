@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Barlow, IBM_Plex_Mono } from "next/font/google";
+import { Barlow_Condensed, Barlow, IBM_Plex_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 
@@ -24,6 +24,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "HAI Project — Honorable AI Standard",
@@ -42,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barlowCondensed.variable} ${barlow.variable} ${ibmPlexMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${barlowCondensed.variable} ${barlow.variable} ${ibmPlexMono.variable} ${caveat.variable} antialiased min-h-screen flex flex-col`}
       >
         <Nav />
         <main className="flex-1">
