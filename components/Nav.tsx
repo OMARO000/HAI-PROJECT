@@ -147,7 +147,8 @@ export default function Nav() {
         </ul>
 
         {/* Child 3 — Account buttons (RIGHT) */}
-        <div className="hidden md:flex" style={{
+        <div style={{
+          display: "flex",
           flexDirection: "column",
           alignItems: "stretch",
           justifyContent: "center",
@@ -206,12 +207,20 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-1"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
-          style={{ background: "none", border: "none", cursor: "pointer", marginRight: "16px" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "6px",
+            padding: "4px",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            marginRight: "16px",
+          }}
         >
           {[0, 1, 2].map((i) => (
             <span key={i} style={{
