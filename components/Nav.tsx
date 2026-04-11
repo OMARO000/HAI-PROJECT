@@ -9,7 +9,6 @@ const navLinks = [
   { href: "https://igitit-app.vercel.app", label: "iGITit", external: true, noUppercase: true },
   { href: "#standard", label: "Standard" },
   { href: "#rubric", label: "Scoring" },
-  { href: "#pilot", label: "Pilot" },
 ];
 
 export default function Nav() {
@@ -42,7 +41,7 @@ export default function Nav() {
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
             <span style={{
               fontFamily: "var(--font-barlow-condensed)",
-              fontWeight: 700, fontSize: "1.4rem",
+              fontWeight: 700, fontSize: "1.75rem",
               letterSpacing: "0.1em", textTransform: "uppercase",
               color: "#FFFFFF",
             }}>
@@ -50,7 +49,7 @@ export default function Nav() {
             </span>
             <span style={{
               fontFamily: "var(--font-barlow-condensed)",
-              fontWeight: 300, fontSize: "1.4rem",
+              fontWeight: 300, fontSize: "1.75rem",
               letterSpacing: "-0.05em", textTransform: "uppercase",
               color: "#A8B8C8", margin: "0 0.05em",
             }}>
@@ -58,7 +57,7 @@ export default function Nav() {
             </span>
             <span style={{
               fontFamily: "var(--font-barlow-condensed)",
-              fontWeight: 700, fontSize: "1.4rem",
+              fontWeight: 700, fontSize: "1.75rem",
               letterSpacing: "0.1em", textTransform: "uppercase",
               color: "#FFFFFF",
             }}>
@@ -66,7 +65,7 @@ export default function Nav() {
             </span>
             <span style={{
               display: "inline-block",
-              width: "3px", height: "1em",
+              width: "3px", height: "1.75rem",
               background: "#B85C38",
               marginLeft: "5px",
               verticalAlign: "middle",
@@ -76,26 +75,37 @@ export default function Nav() {
           </Link>
 
           {/* OMARO badge */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(184,92,56,0.18)",
-            border: "1px solid rgba(184,92,56,0.45)",
-            padding: "5px 10px",
-            lineHeight: 1.2,
-          }}>
-            <span style={{
-              fontFamily: "var(--font-ibm-plex-mono)",
-              fontSize: "13px",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "#B85C38",
-              whiteSpace: "nowrap",
-            }}>
-              An OMARO Company
-            </span>
-          </div>
+          <Link
+            href="https://omaro-site.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "rgba(184,92,56,0.18)",
+              border: "1px solid rgba(184,92,56,0.45)",
+              padding: "5px 10px",
+              lineHeight: 1.2,
+              transition: "background 0.2s",
+            }}
+              onMouseEnter={e => ((e.currentTarget as HTMLDivElement).style.background = "rgba(184,92,56,0.28)")}
+              onMouseLeave={e => ((e.currentTarget as HTMLDivElement).style.background = "rgba(184,92,56,0.18)")}
+            >
+              <span style={{
+                fontFamily: "var(--font-ibm-plex-mono)",
+                fontSize: "13px",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "#B85C38",
+                whiteSpace: "nowrap",
+              }}>
+                An OMARO Company
+              </span>
+            </div>
+          </Link>
         </div>
 
         {/* Child 2 — Nav links (CENTER) */}
@@ -141,8 +151,23 @@ export default function Nav() {
           paddingRight: "24px",
           paddingTop: "8px",
           flexShrink: 0,
-          width: "140px",
+          width: "160px",
         }}>
+          <a
+            href="#pilot"
+            style={{
+              fontFamily: "var(--font-ibm-plex-mono)",
+              fontSize: "11px", letterSpacing: "0.08em",
+              textTransform: "uppercase", textDecoration: "none",
+              padding: "5px 0", width: "100%", textAlign: "center",
+              background: "#B85C38", color: "#FFFFFF",
+              border: "1px solid #B85C38", borderRadius: "2px",
+              transition: "background 0.2s",
+              display: "block", boxSizing: "border-box",
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = "#D4724E"; e.currentTarget.style.borderColor = "#D4724E"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "#B85C38"; e.currentTarget.style.borderColor = "#B85C38"; }}
+          >Apply for Pilot</a>
           <a
             href="/account"
             style={{
