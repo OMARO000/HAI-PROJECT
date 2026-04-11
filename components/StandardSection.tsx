@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 const SYSTEM_PROMPT = `You are the HAI Assistant — a knowledgeable guide for the Honorable AI Standard (HAI Standard v1.1), published by OMARO Public Benefit Corporation, founded by Trenton W. Roberts.
 
@@ -274,7 +275,18 @@ export default function StandardSection() {
                   color: msg.role === "user" ? "#7A96B0" : "#DCE4EC",
                   textAlign: msg.role === "user" ? "right" : "left",
                 }}>
-                  {msg.content}
+                  {msg.role === "assistant" ? (
+                    <ReactMarkdown
+                      components={{
+                        p: ({ children }) => <p style={{ margin: "0 0 8px 0", lineHeight: 1.65 }}>{children}</p>,
+                        ul: ({ children }) => <ul style={{ margin: "8px 0", paddingLeft: "20px" }}>{children}</ul>,
+                        li: ({ children }) => <li style={{ margin: "4px 0", lineHeight: 1.65 }}>{children}</li>,
+                        strong: ({ children }) => <strong style={{ color: "inherit", fontWeight: 600 }}>{children}</strong>,
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  ) : msg.content}
                 </div>
               </div>
             ))}
