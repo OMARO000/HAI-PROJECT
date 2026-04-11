@@ -69,35 +69,21 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
 
         {/* Floor divider */}
         <div style={{
-          position: "relative",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
           width: "420px",
-          height: "24px",
           margin: "16px 0",
+          gap: "8px",
           opacity: 0,
           animation: "fadeUp 0.7s ease forwards 0.5s",
         }}>
-          <hr style={{
-            position: "absolute",
-            top: "50%",
-            left: 0,
-            width: "100%",
-            border: "none",
-            borderTop: "2px solid #B85C38",
-            margin: 0,
-            transform: "translateY(-50%)",
-          }} />
+          <div style={{ flex: 1, height: "2px", backgroundColor: "#B85C38" }} />
           <span style={{
-            position: "absolute",
-            right: 0,
-            top: "50%",
-            transform: "translateY(-50%)",
             fontFamily: "var(--font-caveat)",
             fontSize: "18px",
             color: "#B85C38",
-            display: "flex",
-            alignItems: "center",
-            gap: "4px",
-            backgroundColor: "transparent",
+            whiteSpace: "nowrap",
             lineHeight: 1,
           }}>← floor</span>
         </div>
