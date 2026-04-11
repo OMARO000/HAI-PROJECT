@@ -40,39 +40,25 @@ export default function Nav() {
       >
         {/* Child 1 — Logo + badge (LEFT) */}
         <div suppressHydrationWarning style={{ display: "flex", alignItems: "center", paddingLeft: "24px", flexShrink: 0, gap: "0.75rem", width: "200px" }}>
-          <Link href="/" suppressHydrationWarning style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}>
             <span suppressHydrationWarning style={{
-              fontFamily: "var(--font-barlow-condensed)",
-              fontWeight: 700, fontSize: "1.75rem",
-              letterSpacing: "0.1em", textTransform: "uppercase",
+              fontFamily: "inherit",
+              fontSize: "18px",
+              fontWeight: 700,
               color: "#FFFFFF",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              whiteSpace: "nowrap",
             }}>
-              HAI&nbsp;
-            </span>
-            <span suppressHydrationWarning style={{
-              fontFamily: "var(--font-barlow-condensed)",
-              fontWeight: 300, fontSize: "1.75rem",
-              letterSpacing: "-0.05em", textTransform: "uppercase",
-              color: "#A8B8C8", margin: "0 0.05em",
-            }}>
-              / \
-            </span>
-            <span suppressHydrationWarning style={{
-              fontFamily: "var(--font-barlow-condensed)",
-              fontWeight: 700, fontSize: "1.75rem",
-              letterSpacing: "0.1em", textTransform: "uppercase",
-              color: "#FFFFFF",
-            }}>
-              &nbsp;PROJECT
+              HAI /\ PROJECT
             </span>
             <span suppressHydrationWarning style={{
               display: "inline-block",
-              width: "3px", height: "1.75rem",
-              background: "#B85C38",
-              marginLeft: "5px",
-              verticalAlign: "middle",
-              position: "relative" as const, top: "-1px",
-              animation: "blink 1.1s step-end infinite",
+              width: "2px",
+              height: "18px",
+              backgroundColor: "#B85C38",
+              animation: "blink 1s step-end infinite",
+              flexShrink: 0,
             }} />
           </Link>
 
