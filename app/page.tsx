@@ -7,6 +7,7 @@ import PilotSection from "@/components/PilotSection";
 import Footer from "@/components/Footer";
 import PledgeModal from "@/components/PledgeModal";
 import Rule from "@/components/Rule";
+import AccountBlock from "@/components/AccountBlock";
 
 export default function Home() {
   const [pledgeCount, setPledgeCount] = useState(0);
@@ -35,6 +36,8 @@ export default function Home() {
           countryCount={countryCount}
           onPledgeClick={() => setPledgeOpen(true)}
         />
+        <Rule />
+        <AccountBlock />
         <Rule />
         <StandardSection />
         <Rule />
