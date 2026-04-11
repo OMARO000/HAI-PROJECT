@@ -137,23 +137,58 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="#pilot"
-          className="hidden md:inline-block"
-          style={{
-            fontFamily: "var(--font-ibm-plex-mono)",
-            fontSize: "0.67rem", letterSpacing: "0.1em",
-            textTransform: "uppercase", textDecoration: "none",
-            padding: "0.42rem 1rem",
-            background: "#B85C38", color: "#FFFFFF",
-            transition: "background 0.2s",
-          }}
-          onMouseEnter={e => (e.currentTarget.style.background = "#D4724E")}
-          onMouseLeave={e => (e.currentTarget.style.background = "#B85C38")}
-        >
-          Apply for Pilot
-        </a>
+        {/* Right side: CTA + Account buttons */}
+        <div className="hidden md:flex" style={{ alignItems: "center", gap: "0.75rem", paddingRight: "0" }}>
+          <a
+            href="#pilot"
+            style={{
+              fontFamily: "var(--font-ibm-plex-mono)",
+              fontSize: "0.67rem", letterSpacing: "0.1em",
+              textTransform: "uppercase", textDecoration: "none",
+              padding: "0.42rem 1rem",
+              background: "#B85C38", color: "#FFFFFF",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = "#D4724E")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#B85C38")}
+          >
+            Apply for Pilot
+          </a>
+
+          {/* Stacked account buttons */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px", paddingRight: "24px" }}>
+            <a
+              href="/account"
+              style={{
+                fontFamily: "var(--font-ibm-plex-mono)",
+                fontSize: "0.625rem", letterSpacing: "0.08em",
+                textTransform: "uppercase", textDecoration: "none",
+                padding: "5px 0", minWidth: "120px", textAlign: "center",
+                background: "transparent", color: "#B85C38",
+                border: "1px solid #B85C38", borderRadius: "2px",
+                transition: "background 0.2s, color 0.2s",
+                display: "block",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = "rgba(184,92,56,0.12)"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+            >Login</a>
+            <a
+              href="/account"
+              style={{
+                fontFamily: "var(--font-ibm-plex-mono)",
+                fontSize: "0.625rem", letterSpacing: "0.08em",
+                textTransform: "uppercase", textDecoration: "none",
+                padding: "5px 0", minWidth: "120px", textAlign: "center",
+                background: "#B85C38", color: "#FFFFFF",
+                border: "1px solid #B85C38", borderRadius: "2px",
+                transition: "background 0.2s",
+                display: "block",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#D4724E"; e.currentTarget.style.borderColor = "#D4724E"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "#B85C38"; e.currentTarget.style.borderColor = "#B85C38"; }}
+            >Create Account</a>
+          </div>
+        </div>
 
         {/* Mobile hamburger */}
         <button
