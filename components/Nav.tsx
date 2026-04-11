@@ -212,7 +212,7 @@ export default function Nav() {
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           style={{
-            display: "flex",
+            display: "none",
             flexDirection: "column",
             gap: "6px",
             padding: "4px",
