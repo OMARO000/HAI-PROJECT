@@ -7,6 +7,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "https://omen-app-cyan.vercel.app", label: "OMEN", external: true },
   { href: "https://igitit-app.vercel.app", label: "iGITit", external: true, noUppercase: true },
+  { href: "/registry", label: "Registry" },
   { href: "#standard", label: "Standard" },
   { href: "#rubric", label: "Scoring" },
 ];
