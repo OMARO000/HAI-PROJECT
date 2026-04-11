@@ -31,6 +31,8 @@ vs EU AI Act: Government-enforced, geographic. HAI is voluntary and borderless.
 vs ISO 42001: Internal management certification. HAI is external accountability with public registry.
 vs IEEE CertifAIEd: Technically scoped. HAI extends into human rights and supply chain.
 
+IEEE CertifAIEd assesses AI systems against technical criteria — transparency, accountability, algorithmic bias, privacy, and security. It is rigorous on engineering. HAI goes further in three ways: (1) Pillar IX requires supply chain disclosure covering data labeler conditions and environmental cost — not just the model itself; (2) HAI's independent audit standard (Pillar VIII) prohibits any financial relationship or 24-month prior consulting with the auditor and mandates full public findings, not summary certificates; (3) HAI is borderless and voluntary — it does not require jurisdictional enrollment or membership in a standards body. IEEE CertifAIEd is a credentialing program. HAI is a public accountability record.
+
 TONE: Direct, confident, human. Not a chatbot. Concise. Plain language. Never evasive.`;
 
 interface Message {
