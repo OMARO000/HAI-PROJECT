@@ -110,18 +110,7 @@ export default function Nav() {
         </div>
 
         {/* Child 2 — Nav links (CENTER) */}
-        <ul style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          flex: 1,
-          gap: "32px",
-          flexWrap: "nowrap",
-          listStyle: "none",
-          margin: 0,
-          padding: 0,
-        }} className="hidden md:flex">
+        <ul className="hidden md:flex md:flex-row md:items-center md:justify-center md:gap-8 flex-1 list-none m-0 p-0">
           {navLinks.map(({ href, label, external, noUppercase }) => (
             <li key={href}>
               <a
