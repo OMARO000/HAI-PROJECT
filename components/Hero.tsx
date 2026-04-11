@@ -71,23 +71,35 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
         <div style={{
           position: "relative",
           width: "420px",
-          margin: "12px 0",
+          height: "24px",
+          margin: "16px 0",
           opacity: 0,
           animation: "fadeUp 0.7s ease forwards 0.5s",
         }}>
-          <div style={{ width: "100%", height: "2px", background: "#B85C38" }} />
+          <hr style={{
+            position: "absolute",
+            top: "50%",
+            left: 0,
+            width: "100%",
+            border: "none",
+            borderTop: "2px solid #B85C38",
+            margin: 0,
+            transform: "translateY(-50%)",
+          }} />
           <span style={{
             position: "absolute",
             right: 0,
-            top: "6px",
+            top: "50%",
+            transform: "translateY(-50%)",
             fontFamily: "var(--font-caveat)",
             fontSize: "18px",
             color: "#B85C38",
             display: "flex",
             alignItems: "center",
             gap: "4px",
+            backgroundColor: "transparent",
             lineHeight: 1,
-          }}>↓ floor</span>
+          }}>← floor</span>
         </div>
 
         {/* Hero title — second line */}
