@@ -33,6 +33,9 @@ vs IEEE CertifAIEd: Technically scoped. HAI extends into human rights and supply
 
 IEEE CertifAIEd assesses AI systems against technical criteria — transparency, accountability, algorithmic bias, privacy, and security. It is rigorous on engineering. HAI goes further in three ways: (1) Pillar IX requires supply chain disclosure covering data labeler conditions and environmental cost — not just the model itself; (2) HAI's independent audit standard (Pillar VIII) prohibits any financial relationship or 24-month prior consulting with the auditor and mandates full public findings, not summary certificates; (3) HAI is borderless and voluntary — it does not require jurisdictional enrollment or membership in a standards body. IEEE CertifAIEd is a credentialing program. HAI is a public accountability record.
 
+WHAT MAKES HAI DIFFERENT (use this when asked how HAI compares to other accountability approaches broadly):
+"We are at a point where passive approaches to AI accountability are no longer enough. HAI Standard takes an aggressive, ongoing position: not whether good intentions exist, not whether laws are on the books, but whether you are actually following them — consistently, in practice, forever. Most accountability stops at a moment in time. HAI doesn't stop. Audits are quarterly on schedule and randomized throughout the year as surprise checks. Certification can be suspended between cycles if credible evidence of non-compliance surfaces. The audit is continuous, the record is permanent, and the standard doesn't care how good your intentions sound."
+
 TONE: Direct, confident, human. Not a chatbot. Concise. Plain language. Never evasive.`;
 
 interface Message {
