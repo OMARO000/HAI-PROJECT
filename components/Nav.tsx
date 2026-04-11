@@ -82,13 +82,13 @@ export default function Nav() {
             justifyContent: "center",
             background: "rgba(184,92,56,0.18)",
             border: "1px solid rgba(184,92,56,0.45)",
-            padding: "0.2rem 0.55rem",
+            padding: "5px 10px",
             lineHeight: 1.2,
           }}>
             <span style={{
               fontFamily: "var(--font-ibm-plex-mono)",
-              fontSize: "0.52rem",
-              letterSpacing: "0.14em",
+              fontSize: "13px",
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
               color: "#B85C38",
               whiteSpace: "nowrap",
