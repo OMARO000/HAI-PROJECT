@@ -22,7 +22,7 @@ export default function Nav() {
       background: "rgba(11,25,41,0.94)",
       backdropFilter: "blur(12px)",
       borderBottom: "1px solid rgba(168,184,200,0.18)",
-      height: "112px",
+      height: "128px",
     }}>
       <nav
         style={{
@@ -31,7 +31,7 @@ export default function Nav() {
           alignItems: "center",
           justifyContent: "space-between",
           width: "100%",
-          height: "112px",
+          height: "128px",
           padding: 0,
           boxSizing: "border-box",
         }}
