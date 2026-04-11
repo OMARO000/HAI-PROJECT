@@ -116,7 +116,7 @@ export default function Nav() {
           alignItems: "center",
           justifyContent: "center",
           flex: 1,
-          gap: "28px",
+          gap: "32px",
           flexWrap: "nowrap",
           listStyle: "none",
           margin: 0,
