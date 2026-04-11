@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { companies, tierLabel, pillarNames, type PillarResult } from "@/lib/registry";
+import { companies, tierLabel, pillarNames, type PillarResult, type AuditResult } from "@/lib/registry";
 
 const mono: React.CSSProperties = { fontFamily: "var(--font-ibm-plex-mono)" };
 
@@ -139,6 +139,84 @@ export default function CompanyDetailPage({ params }: PageProps) {
               </div>
             );
           })}
+        </div>
+
+        {/* Audit timeline */}
+        <div style={{ marginBottom: "3rem" }}>
+          <p style={{ ...mono, fontSize: "0.58rem", letterSpacing: "0.2em", color: "#B85C38", textTransform: "uppercase", marginBottom: "0.35rem" }}>
+            Audit History
+          </p>
+          <p style={{ ...mono, fontSize: "0.58rem", letterSpacing: "0.08em", color: "#4A6070", marginBottom: "1.5rem" }}>
+            Quarterly scheduled · Randomized surprise audits · Suspension possible between cycles
+          </p>
+
+          {company.auditHistory.length === 0 ? (
+            <p style={{ ...mono, fontSize: "0.72rem", color: "#4A6070", letterSpacing: "0.06em" }}>
+              No audit history yet.
+            </p>
+          ) : (
+            <div style={{ position: "relative", paddingLeft: "1.5rem" }}>
+              {/* Vertical line */}
+              <div style={{
+                position: "absolute", left: "6px", top: "8px",
+                width: "1px", bottom: "8px",
+                background: "rgba(168,184,200,0.15)",
+              }} />
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                {company.auditHistory.map((entry, i) => {
+                  const dotColor: Record<AuditResult, string> = {
+                    pass: "#3D8A5A",
+                    pending: "#B8943A",
+                    suspended: "#C04040",
+                  };
+                  const badgeColor: Record<AuditResult, string> = {
+                    pass: "#3D8A5A",
+                    pending: "#B8943A",
+                    suspended: "#C04040",
+                  };
+                  const resultText: Record<AuditResult, string> = {
+                    pass: "Passed",
+                    pending: "Pending",
+                    suspended: "Suspended",
+                  };
+                  return (
+                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "1rem" }}>
+                      {/* Dot */}
+                      <div style={{
+                        width: "13px", height: "13px", borderRadius: "50%",
+                        background: dotColor[entry.result],
+                        flexShrink: 0, marginTop: "2px",
+                        position: "relative", left: "-1.5rem",
+                        boxShadow: `0 0 6px ${dotColor[entry.result]}66`,
+                      }} />
+                      <div style={{ marginLeft: "-1.5rem" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+                          <span style={{
+                            fontFamily: "var(--font-barlow-condensed)",
+                            fontSize: "1rem", fontWeight: 700,
+                            textTransform: "uppercase", letterSpacing: "0.04em",
+                            color: "#FFFFFF",
+                          }}>{entry.type}</span>
+                          <span style={{
+                            ...mono,
+                            fontSize: "0.52rem", letterSpacing: "0.12em", textTransform: "uppercase",
+                            padding: "0.15rem 0.5rem",
+                            border: `1px solid ${badgeColor[entry.result]}`,
+                            color: badgeColor[entry.result],
+                            background: `${badgeColor[entry.result]}1a`,
+                          }}>{resultText[entry.result]}</span>
+                        </div>
+                        <p style={{ ...mono, fontSize: "0.6rem", color: "#4A6070", letterSpacing: "0.08em", marginTop: "0.15rem" }}>
+                          {entry.date}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Dispute form */}
