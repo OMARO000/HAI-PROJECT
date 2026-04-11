@@ -20,7 +20,7 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
       maxWidth: "1100px",
       margin: "0 auto",
     }}>
-      <div style={{ paddingTop: "5rem" }}>
+      <div style={{ paddingTop: "5rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
 
         {/* Eyebrow */}
         <p style={{
@@ -73,7 +73,7 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
           flexDirection: "row",
           alignItems: "center",
           width: "420px",
-          margin: "16px 0",
+          margin: "16px auto",
           gap: "8px",
           opacity: 0,
           animation: "fadeUp 0.7s ease forwards 0.5s",
@@ -134,6 +134,7 @@ export default function Hero({ pledgeCount, orgCount, countryCount, onPledgeClic
           display: "flex",
           gap: "0.75rem",
           flexWrap: "wrap",
+          justifyContent: "center",
           opacity: 0,
           animation: "fadeUp 0.7s ease forwards 0.7s",
         }}>
