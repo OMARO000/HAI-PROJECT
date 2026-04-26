@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const FREE_EMAIL_DOMAINS = [
-  "gmail.com","yahoo.com","hotmail.com","outlook.com","icloud.com",
-  "aol.com","mail.com","protonmail.com","pm.me","tutanota.com",
-  "gmx.com","zoho.com","yandex.com","live.com","msn.com",
-];
+import { isWorkEmail } from "@/lib/email";
 
 interface PledgeModalProps {
   open: boolean;
@@ -34,8 +29,7 @@ export default function PledgeModal({ open, onClose, onPledgeCountIncrement }: P
       return;
     }
     if (type === "organization") {
-      const domain = form.email.split("@")[1]?.toLowerCase();
-      if (FREE_EMAIL_DOMAINS.includes(domain)) {
+      if (!isWorkEmail(form.email)) {
         setError("Organizations must use a work email address.");
         return;
       }

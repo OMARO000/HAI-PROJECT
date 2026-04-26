@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { isWorkEmail } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   try {
@@ -7,6 +8,13 @@ export async function POST(req: NextRequest) {
 
     if (!company || !name || !email) {
       return NextResponse.json({ error: "Company, name, and email are required." }, { status: 400 });
+    }
+
+    if (!isWorkEmail(email)) {
+      return NextResponse.json(
+        { error: "Please use a work email address. Personal email domains are not accepted for organizational applications." },
+        { status: 400 }
+      );
     }
 
     const { error } = await supabaseAdmin
