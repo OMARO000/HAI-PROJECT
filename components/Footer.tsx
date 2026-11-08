@@ -39,7 +39,7 @@ export default function Footer() {
               {" "}PROJECT
             </p>
             <p style={{ fontSize: "0.8rem", color: "#7A96B0", lineHeight: 1.6 }}>
-              The Honorable AI Standard. Published by OMARO Public Benefit Corporation. Sovereign by Design. Published by OMARO Origins.
+              The Honorable AI Standard. Published by OMARO Public Benefit Corporation. Agency by Design. Published by OMARO Origins.
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export default function Footer() {
         fontSize: "0.58rem", letterSpacing: "0.1em",
         color: "#7A96B0", textTransform: "uppercase",
       }}>
-        <span>© 2026 OMARO Public Benefit Corporation. Sovereign by Design.</span>
+        <span>© 2026 OMARO Public Benefit Corporation. Agency by Design.</span>
         <span>haiproject.xyz · omaro.xyz/hai-standard</span>
       </div>
     </>

@@ -33,7 +33,7 @@ export const companies: Company[] = [
     industry: "Technology / Public Benefit Corporation",
     website: "https://omaro.xyz",
     description:
-      "Sovereign-by-Design technology infrastructure. Builds human-centered products including OMEN, iGITit, and HAI Project. Founded by Trenton W. Roberts.",
+      "Agency-by-Design technology infrastructure. Builds human-centered products including OMEN, iGITit, and HAI Project. Founded by Trenton W. Roberts.",
     pillars: {
       1: "pass",
       2: "pass",

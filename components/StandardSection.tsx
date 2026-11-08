@@ -23,7 +23,7 @@ THREE TIERS:
 
 PILOT PROGRAM: 30-day window. Every qualifying company gets free Declared audit with published findings. Lottery for Verified or Certified free year one. Apply at haiproject.xyz.
 
-OMARO: OMARO PBC builds human-centered technology infrastructure. OMEN (corporate accountability ledger), iGITit (open source code analysis), HAI Project. Founded by Trenton W. Roberts. Sovereign by Design. omaro.xyz.
+OMARO: OMARO PBC builds human-centered technology infrastructure. OMEN (corporate accountability ledger), iGITit (open source code analysis), HAI Project. Founded by Trenton W. Roberts. Agency by Design. omaro.xyz.
 
 INTELLECTUAL LINEAGE: Vienna Manifesto (Werthner et al., 2019), Zuboff Surveillance Capitalism (2019), Steffen/Lee/Vardi "It's Not the AI" (arXiv:2511.15740), EU CORDIS Digital Humanism, Berners-Lee Solid/Inrupt, Anthropic 81K study (Huang et al., 2026).
 
