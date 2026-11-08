@@ -12,7 +12,7 @@ III. Safety & Robustness — Test adversarial conditions and population diversit
 IV. Equality & Non-Discrimination — Continuous testing for discriminatory outcomes. Correct when found.
 V. Human Override & Control — Meaningful human review for any significant AI decision.
 VI. Use Limits & Proportionality — AI only for disclosed purposes. No function creep without consent.
-VII. Data Sovereignty & Empowerment — Access, correct, limit, and delete data in practice, not policy.
+VII. Data Ownership & Empowerment — Access, correct, limit, and delete data in practice, not policy.
 VIII. Independent Audit — No financial relationship, no prior 24-month consulting, full published findings. Benchmarks: BBQ, WinoQueer, TruthfulQA, HaluEval, HELM, KorNAT, SafetyBench, ToxiGen, FMTI.
 IX. Human Dignity Across the Full Stack — Heightened protections for children, elderly, mental health crisis users, economically coerced users. Supply chain disclosure: data laborer conditions, environmental cost.
 

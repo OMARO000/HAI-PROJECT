@@ -65,7 +65,7 @@ export const pillarNames: Record<number, string> = {
   4: "Equality & Non-Discrimination",
   5: "Human Override & Control",
   6: "Use Limits & Proportionality",
-  7: "Data Sovereignty & Empowerment",
+  7: "Data Ownership & Empowerment",
   8: "Independent Audit",
   9: "Human Dignity Across the Full Stack",
 };

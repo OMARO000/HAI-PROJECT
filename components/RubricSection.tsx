@@ -9,7 +9,7 @@ const pillars = [
   { num: "IV",   name: "Equality & Non-Discrimination",         declared: "ai",   verified: "both", certified: "both" },
   { num: "V",    name: "Human Override & Control",              declared: "ai",   verified: "ai",   certified: "human" },
   { num: "VI",   name: "Use Limits & Proportionality",          declared: "ai",   verified: "ai",   certified: "ai" },
-  { num: "VII",  name: "Data Sovereignty & Empowerment",        declared: "ai",   verified: "ai",   certified: "ai" },
+  { num: "VII",  name: "Data Ownership & Empowerment",        declared: "ai",   verified: "ai",   certified: "ai" },
   { num: "VIII", name: "Independent Audit",                     declared: "ai",   verified: "both", certified: "human" },
   { num: "IX",   name: "Human Dignity Across the Full Stack",   declared: "ai",   verified: "ai",   certified: "human" },
 ];

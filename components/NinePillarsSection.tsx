@@ -35,7 +35,7 @@ const pillars = [
   },
   {
     numeral: "VII",
-    name: "Data Sovereignty & Empowerment",
+    name: "Data Ownership & Empowerment",
     desc: "Access, correct, limit, and delete data in practice, not policy.",
   },
   {
