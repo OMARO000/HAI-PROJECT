@@ -31,7 +31,7 @@ export const companies: Company[] = [
     since: "2026-01-01",
     country: "US",
     industry: "Technology / Public Benefit Corporation",
-    website: "https://omaro.xyz",
+    website: "https://omaro.org",
     description:
       "Agency-by-Design technology infrastructure. Builds human-centered products including OMEN, iGITit, and HAI Project. Founded by Trenton W. Roberts.",
     pillars: {

@@ -7,10 +7,10 @@ export default function Footer() {
   ];
 
   const omaro = [
-    { label: "omaro.xyz", href: "https://omaro.xyz" },
+    { label: "omaro.org", href: "https://omaro.org" },
     { label: "OMEN Ledger", href: "https://omen-os.org" },
     { label: "iGITit", href: "https://igitit.xyz" },
-    { label: "support@omaro.xyz", href: "mailto:support@omaro.xyz" },
+    { label: "support@omaro.org", href: "mailto:support@omaro.org" },
   ];
 
   const linkStyle: React.CSSProperties = {
@@ -100,7 +100,7 @@ export default function Footer() {
         color: "#7A96B0", textTransform: "uppercase",
       }}>
         <span>© 2026 OMARO Public Benefit Corporation. Agency by Design.</span>
-        <span>haiproject.xyz · omaro.xyz/hai-standard</span>
+        <span>haiproject.xyz · omaro.org/hai-standard</span>
       </div>
     </>
   );
